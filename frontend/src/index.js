@@ -6,22 +6,42 @@ import './index.css';
 import Root from './routes/root';
 // Import error page element
 import ErrorPage from './error-page';
-import Listing from './routes/listing';
-import Home from './routes/home';
+import Home from './routes/Home';
+import SignInSide from './routes/SignInSide';
+import SignUp from './routes/SignUp';
+import Catalogo from './routes/Catalogo';
+import Producto from './routes/Producto';
 
 const router = createBrowserRouter([
   {
     path: '/',
+    element: <Home />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: 'admin',
     element: <Root />,
     errorElement: <ErrorPage />,
   },
   {
-    path: 'catalogo',
-    element: <Listing />,
-  },
-  {
     path: 'inicio',
     element: <Home />,
+  },
+  {
+    path: 'ingresar',
+    element: <SignInSide />,
+  },
+  {
+    path: 'registro',
+    element: <SignUp />,
+  },
+  {
+    path: 'catalogo',
+    element: <Catalogo />,
+  },
+  {
+    path: 'producto',
+    element: <Producto />,
   },
 ]);
 
